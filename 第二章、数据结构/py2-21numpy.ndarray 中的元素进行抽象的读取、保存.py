@@ -4,7 +4,7 @@ from array import array
 from random import random
 
 floats = array('d', (random() for i in range(10 ** 2)))
-numpy.savetxt('C:/my file/03.python/中级书籍/fluent_python/第二章数据结构/filename3.txt', floats)
+numpy.savetxt('C:/my file/03.python/中级书籍/fluent_python/第二章、数据结构/filename3.txt', floats)
 numpy.loadtxt()
 
 # ❷ 利用序列切片来读取其中的最后 3 个数。
