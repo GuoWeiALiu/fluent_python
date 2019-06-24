@@ -91,3 +91,24 @@ print(len(set([v1, v2])))
 # END VECTOR2D_V3_DEMO
 print(v1.__dict__)
 print(v1._Vector2d__x)
+
+v1 = Vector2d(1.1, 2.2)
+dumpd = bytes(v1)
+print(dumpd)
+print(len(dumpd))
+v1.typecode = 'f'
+dumpf = bytes(v1)
+print(dumpf)
+# Vector2d.typecode 属性的值不变，只有 v1 实例的 typecode 属
+# 性使用 'f'。
+print(Vector2d.typecode)
+# 如果想修改类属性的值，必须直接在类上修改，不能通过实例修改
+# Vector2d.typecode = 'f'
+print(Vector2d.typecode)
+# 示例 9-14　ShortVector2d 是 Vector2d 的子类，只用于覆盖typecode 的默认值
+class ShortVector2d(Vector2d):
+    typecode = 'f'
+sv = ShortVector2d(1/22,1/27)
+print(sv)
+print(sv.typecode)
+print(len(bytes(sv)))
